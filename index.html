@@ -1,217 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lenana Car Dealership - Home</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(to right, #c2e9fb, #a1c4fd);
-      color: #333;
-      overflow-x: hidden;
-    }
-    header {
-      background-color: #2a9d8f;
-      color: white;
-      padding: 25px 0;
-      text-align: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.8rem;
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
-    }
-    header p {
-      margin: 8px 0 0;
-      font-size: 1.1rem;
-      font-style: italic;
-      opacity: 0.85;
-    }
-    nav ul {
-      list-style-type: none;
-      padding: 0;
-      margin: 15px 0 0;
-      display: flex;
-      justify-content: center;
-      gap: 25px;
-      font-weight: 600;
-      font-size: 1.1rem;
-    }
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      padding: 6px 12px;
-      border-radius: 6px;
-      transition: background-color 0.3s, color 0.3s;
-    }
-    nav ul li a:hover {
-      background-color: #ffd166;
-      color: #2a9d8f;
-      text-decoration: none;
-    }
-    main {
-      padding: 40px 20px;
-      max-width: 1100px;
-      margin: auto;
-      text-align: center;
-    }
-    section {
-      background-color: white;
-      padding: 35px 30px;
-      border-radius: 12px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.12);
-      margin-bottom: 40px;
-    }
-    section h2 {
-      color: #2a9d8f;
-      font-size: 2.5rem;
-      margin-bottom: 25px;
-      font-weight: 700;
-    }
-    section p {
-      font-size: 1.15rem;
-      color: #555;
-      max-width: 700px;
-      margin: 0 auto 35px;
-      line-height: 1.6;
-    }
-    .car-gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 25px;
-      opacity: 0;
-      animation: fadeIn 1.5s forwards;
-    }
-    .car-gallery img {
-      width: 280px;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 12px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-      cursor: pointer;
-      filter: drop-shadow(0 2px 5px rgba(0,0,0,0.1));
-    }
-    .car-gallery img:hover {
-      transform: scale(1.08) rotate(2deg);
-      box-shadow: 0 12px 28px rgba(0,0,0,0.3);
-      filter: drop-shadow(0 5px 15px rgba(0,0,0,0.2));
-    }
-    .car-actions {
-      margin-top: 15px;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-    }
-    .btn {
-      background-color: #2a9d8f;
-      color: white;
-      border: none;
-      padding: 12px 28px;
-      border-radius: 30px;
-      font-weight: 600;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background-color 0.3s;
-      text-decoration: none;
-      display: inline-block;
-      box-shadow: 0 4px 10px rgba(42,157,143,0.4);
-    }
-    .btn:hover {
-      background-color: #21867a;
-      box-shadow: 0 6px 14px rgba(33,134,122,0.6);
-      text-decoration: none;
-    }
-    footer {
-      background-color: #2a9d8f;
-      color: white;
-      text-align: center;
-      padding: 14px 0;
-      margin-top: 40px;
-      font-weight: 600;
-      font-size: 1rem;
-      box-shadow: 0 -3px 10px rgba(0,0,0,0.1);
-    }
-
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .car-gallery img {
-        width: 90vw;
-        height: auto;
-      }
-      nav ul {
-        flex-direction: column;
-        gap: 12px;
-      }
-      .btn {
-        padding: 10px 22px;
-        font-size: 0.95rem;
-      }
-    }
-  </style>
+  <meta name="description"
+    content="Lenana Car Dealership connects drivers with quality BMW, Subaru, Mazda, and Toyota vehicles." />
+  <title>Lenana Car Dealership | Quality Vehicles</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="app.js" defer></script>
 </head>
+
 <body>
-  <header>
-    <h1>Welcome to Lenana Car Dealership</h1>
-    <p>Your trusted partner for quality vehicles & unbeatable service</p>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav-shell" aria-label="Primary navigation">
+      <a class="brand" href="index.html" aria-label="Lenana Car Dealership home">
+        <span class="brand-mark" aria-hidden="true">LC</span>
+        <span>Lenana Cars<small>Premium dealership</small></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html" aria-current="page">Home</a></li>
         <li><a href="inventory.html">Inventory</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a class="nav-cta" href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
-  <main>
-    <section>
-      <h2>Featured Cars</h2>
-      <p>Explore our exclusive selection of the latest models and fan favorites. Find the car that’s perfect for your lifestyle.</p>
-      <div class="car-gallery">
+
+  <main id="main">
+    <section class="hero">
+      <div class="container hero-grid">
         <div>
-          <img src="images/car1.jpg" alt="Sleek Sedan" />
-          <div class="car-actions">
-            <a href="inventory.html#car1" class="btn">View Details</a>
-            <a href="contact.html" class="btn">Request Info</a>
+          <p class="eyebrow">Trusted vehicle sourcing</p>
+          <h1>Find a car that feels right from day one.</h1>
+          <p class="lead">Explore carefully selected vehicles, transparent pricing, and a buying experience designed to
+            be clear, calm, and confidence-building.</p>
+          <div class="hero-actions">
+            <a class="button" href="inventory.html">Browse Inventory</a>
+            <a class="button secondary" href="contact.html">Request Assistance</a>
+          </div>
+          <div class="stats" aria-label="Dealership highlights">
+            <div class="stat"><strong>16</strong><span>Featured vehicles</span></div>
+            <div class="stat"><strong>4</strong><span>Trusted brands</span></div>
+            <div class="stat"><strong>10+</strong><span>Years of service</span></div>
           </div>
         </div>
-        <div>
-          <img src="images/car2.jpg" alt="Sporty SUV" />
-          <div class="car-actions">
-            <a href="inventory.html#car2" class="btn">View Details</a>
-            <a href="contact.html" class="btn">Request Info</a>
-          </div>
-        </div>
-        <div>
-          <img src="images/car3.jpg" alt="Luxury Coupe" />
-          <div class="car-actions">
-            <a href="inventory.html#car3" class="btn">View Details</a>
-            <a href="contact.html" class="btn">Request Info</a>
-          </div>
-        </div>
-        <div>
-          <img src="images/subaru1.jpg" alt="Family SUV" />
-          <div class="car-actions">
-            <a href="inventory.html#car4" class="btn">View Details</a>
-            <a href="contact.html" class="btn">Request Info</a>
+        <div class="hero-media">
+          <img src="images/car1.jpg" alt="Modern sedan displayed at Lenana Car Dealership" />
+          <div class="hero-badge">
+            <strong>2025</strong>
+            <span>Modern buying experience with premium support</span>
           </div>
         </div>
       </div>
     </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Why choose us</p>
+          <h2>Designed around a simpler car-buying journey.</h2>
+          <p>Lenana Car Dealership keeps the experience focused: clear vehicle information, helpful guidance, and
+            responsive support when you are ready to move.</p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <h3>Curated Selection</h3>
+            <p>Choose from BMW, Subaru, Mazda, and Toyota options selected for quality, reliability, and everyday
+              usefulness.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Transparent Details</h3>
+            <p>Review years, prices, and key specifications before making contact so every conversation starts with
+              clarity.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Fast Support</h3>
+            <p>Use the inquiry forms to request details, place an order, or get help choosing the vehicle that fits your
+              needs.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Featured cars</p>
+          <h2>Popular picks this week.</h2>
+          <p>Start with these customer favorites, then explore the full inventory for more options.</p>
+        </div>
+        <div class="car-grid">
+          <article class="car-card">
+            <img src="images/car1.jpg" alt="Sleek sedan" />
+            <div class="car-card-body">
+              <h3>Sleek Sedan</h3>
+              <div class="car-meta"><span class="pill">Comfort</span><span class="pill">Daily drive</span></div>
+              <div class="car-actions">
+                <a class="button" href="inventory.html#bmw-3-series">View Details</a>
+                <a class="button secondary" href="contact.html">Request Info</a>
+              </div>
+            </div>
+          </article>
+          <article class="car-card">
+            <img src="images/car2.jpg" alt="Sporty SUV" />
+            <div class="car-card-body">
+              <h3>Sporty SUV</h3>
+              <div class="car-meta"><span class="pill">Family ready</span><span class="pill">Utility</span></div>
+              <div class="car-actions">
+                <a class="button" href="inventory.html#bmw-x5">View Details</a>
+                <a class="button secondary" href="contact.html">Request Info</a>
+              </div>
+            </div>
+          </article>
+          <article class="car-card">
+            <img src="images/car3.jpg" alt="Luxury coupe" />
+            <div class="car-card-body">
+              <h3>Luxury Coupe</h3>
+              <div class="car-meta"><span class="pill">Premium</span><span class="pill">Performance</span></div>
+              <div class="car-actions">
+                <a class="button" href="inventory.html#bmw-m4">View Details</a>
+                <a class="button secondary" href="contact.html">Request Info</a>
+              </div>
+            </div>
+          </article>
+          <article class="car-card">
+            <img src="images/subaru1.jpg" alt="Family SUV" />
+            <div class="car-card-body">
+              <h3>Family SUV</h3>
+              <div class="car-meta"><span class="pill">AWD</span><span class="pill">Spacious</span></div>
+              <div class="car-actions">
+                <a class="button" href="inventory.html#subaru-outback">View Details</a>
+                <a class="button secondary" href="contact.html">Request Info</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
   </main>
-  <footer>
-    <p>&copy; 2025 Lenana Car Dealership</p>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>&copy; 2025 Lenana Car Dealership. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="inventory.html">Inventory</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
   </footer>
 </body>
+
 </html>

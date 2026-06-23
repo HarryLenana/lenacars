@@ -1,514 +1,267 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Inventory - Lenana Car Deals</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(to right, #f6d365, #fda085);
-      color: #333;
-    }
-    header {
-      background-color: #264653;
-      color: white;
-      padding: 20px 0;
-      text-align: center;
-    }
-    nav ul {
-      list-style-type: none;
-      padding: 0;
-      margin: 10px 0 0;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-    }
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    nav ul li a:hover {
-      text-decoration: underline;
-      color: #ffddc1;
-    }
-    main {
-      padding: 30px 20px;
-      text-align: center;
-    }
-    section {
-      background-color: white;
-      padding: 25px;
-      margin: 30px auto;
-      max-width: 1000px;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
-    section h2 {
-      color: #e76f51;
-      font-size: 2rem;
-      margin-bottom: 20px;
-    }
-    .car-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-    .car-item {
-      background-color: #f1f1f1;
-      padding: 15px;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    .car-item img {
-      width: 100%;
-      border-radius: 6px;
-      height: 150px;
-      object-fit: cover;
-    }
-    .car-item h3 {
-      margin-top: 10px;
-      color: #264653;
-    }
-    .car-item p {
-      margin: 5px 0;
-      color: #555;
-    }
-    form {
-      background-color: white;
-      padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      max-width: 600px;
-      margin: 30px auto;
-      text-align: left;
-    }
-    form label {
-      display: block;
-      margin-top: 15px;
-      font-weight: bold;
-    }
-    form input,
-    form select,
-    form textarea {
-      width: 100%;
-      padding: 12px;
-      margin-top: 6px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      box-sizing: border-box;
-    }
-    form button {
-      margin-top: 20px;
-      background-color: #264653;
-      color: white;
-      border: none;
-      padding: 12px 20px;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-    form button:hover {
-      background-color: #1b2e3b;
-    }
-    footer {
-      background-color: #264653;
-      color: white;
-      text-align: center;
-      padding: 12px 0;
-      margin-top: 30px;
-    }
-  </style>
+  <meta name="description"
+    content="Browse available BMW, Subaru, Mazda, and Toyota vehicles at Lenana Car Dealership." />
+  <title>Inventory | Lenana Car Dealership</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="app.js" defer></script>
 </head>
+
 <body>
-  <header>
-    <h1>Available Cars at Lenana Dealership</h1>
-    <nav>
-      <ul>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav-shell" aria-label="Primary navigation">
+      <a class="brand" href="index.html" aria-label="Lenana Car Dealership home">
+        <span class="brand-mark" aria-hidden="true">LC</span>
+        <span>Lenana Cars<small>Premium dealership</small></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="inventory.html">Inventory</a></li>
+        <li><a href="inventory.html" aria-current="page">Inventory</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a class="nav-cta" href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
-  <main>
-    <section>
-      <h2>Our Inventory</h2>
-      <div class="car-list">
-        <div class="car-item" data-car="BMW 3 Series">
-          <img src="images/bmw1.jpg" alt="BMW 3 Series">
-          <h3>BMW 3 Series</h3>
-          <p>Year: 2023</p>
-          <p>Price: $42,000</p>
-          <button class="view-details-btn">View Details</button>
-        </div>
-        <div class="car-item" data-car="BMW X5">
-          <img src="images/bmw2.jpg" alt="BMW X5">
-          <h3>BMW X5</h3>
-          <p>Year: 2022</p>
-          <p>Price: $58,000</p>
-          <button class="view-details-btn">View Details</button>
-        </div>
-        <div class="car-item" data-car="BMW i8">
-          <img src="images/bmw3.jpg" alt="BMW i8">
-          <h3>BMW i8</h3>
-          <p>Year: 2021</p>
-          <p>Price: $95,000</p>
-          <button class="view-details-btn">View Details</button>
-        </div>
-        <div class="car-item" data-car="BMW M4">
-          <img src="images/bmw4.jpg" alt="BMW M4">
-          <h3>BMW M4</h3>
-          <p>Year: 2024</p>
-          <p>Price: $70,000</p>
-          <button class="view-details-btn">View Details</button>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow">Available cars</p>
+        <h1>Browse the Lenana Cars inventory.</h1>
+        <p class="lead">Compare trusted models from BMW, Subaru, Mazda, and Toyota, then view details or place an order
+          from the same page.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="inventory-tools">
+          <label class="field" for="inventorySearch">
+            <span class="eyebrow">Quick filter</span>
+            <input class="search-field" type="search" id="inventorySearch"
+              placeholder="Search by brand, model, year, or price" autocomplete="off" />
+          </label>
+          <a class="button secondary" href="#order">Place an Order</a>
         </div>
 
-        <div class="car-item" data-car="Subaru Outback">
-          <img src="images/subaru1.jpg" alt="Subaru Outback">
-          <h3>Subaru Outback</h3>
-          <p>Year: 2022</p>
-          <p>Price: $28,000</p>
-          <button class="view-details-btn">View Details</button>
-        </div>
-        <div class="car-item" data-car="Subaru WRX">
-          <img src="images/subaru2.jpg" alt="Subaru WRX">
-          <h3>Subaru WRX</h3>
-          <p>Year: 2023</p>
-          <p>Price: $34,500</p>
-          <button class="view-details-btn">View Details</button>
-        </div>
-        <div class="car-item" data-car="Subaru Forester">
-          <img src="images/subaru3.jpg" alt="Subaru Forester">
-          <h3>Subaru Forester</h3>
-          <p>Year: 2021</p>
-          <p>Price: $26,000</p>
-          <button class="view-details-btn">View Details</button>
-        </div>
-        <div class="car-item" data-car="Subaru BRZ">
-          <img src="images/subaru4.jpg" alt="Subaru BRZ">
-          <h3>Subaru BRZ</h3>
-          <p>Year: 2024</p>
-          <p>Price: $31,000</p>
-          <button class="view-details-btn">View Details</button>
-        </div>
+        <div class="car-grid" aria-label="Vehicle inventory">
+          <article class="car-card" id="bmw-3-series" data-car="BMW 3 Series">
+            <img src="images/bmw1.jpg" alt="BMW 3 Series" />
+            <div class="car-card-body">
+              <h3>BMW 3 Series</h3>
+              <div class="car-meta"><span class="pill">2023</span><span class="price">$42,000</span></div>
+              <button class="view-details-btn" type="button">View Details</button>
+            </div>
+          </article>
+          <article class="car-card" id="bmw-x5" data-car="BMW X5">
+            <img src="images/bmw2.jpg" alt="BMW X5" />
+            <div class="car-card-body">
+              <h3>BMW X5</h3>
+              <div class="car-meta"><span class="pill">2022</span><span class="price">$58,000</span></div>
+              <button class="view-details-btn" type="button">View Details</button>
+            </div>
+          </article>
+          <article class="car-card" id="bmw-i8" data-car="BMW i8">
+            <img src="images/bmw3.jpg" alt="BMW i8" />
+            <div class="car-card-body">
+              <h3>BMW i8</h3>
+              <div class="car-meta"><span class="pill">2021</span><span class="price">$95,000</span></div>
+              <button class="view-details-btn" type="button">View Details</button>
+            </div>
+          </article>
+          <article class="car-card" id="bmw-m4" data-car="BMW M4">
+            <img src="images/bmw4.jpg" alt="BMW M4" />
+            <div class="car-card-body">
+              <h3>BMW M4</h3>
+              <div class="car-meta"><span class="pill">2024</span><span class="price">$70,000</span></div>
+              <button class="view-details-btn" type="button">View Details</button>
+            </div>
+          </article>
 
-        <div class="car-item" data-car="Mazda 3">
-          <img src="images/mazda1.jpg" alt="Mazda 3">
-          <h3>Mazda 3</h3>
-          <p>Year: 2022</p>
-          <p>Price: $23,000</p>
-          <button class="view-details-btn">View Details</button>
-        </div>
-        <div class="car-item" data-car="Mazda CX-5">
-          <img src="images/mazda2.jpg" alt="Mazda CX-5">
-          <h3>Mazda CX-5</h3>
-          <p>Year: 2023</p>
-          <p>Price: $29,000</p>
-          <button class="view-details-btn">View Details</button>
-        </div>
-        <div class="car-item" data-car="Mazda 6">
-          <img src="images/mazda3.jpg" alt="Mazda 6">
-          <h3>Mazda 6</h3>
-          <p>Year: 2021</p>
-          <p>Price: $25,500</p>
-          <button class="view-details-btn">View Details</button>
-        </div>
-        <div class="car-item" data-car="Mazda MX-5">
-          <img src="images/mazda4.jpg" alt="Mazda MX-5">
-          <h3>Mazda MX-5</h3>
-          <p>Year: 2024</p>
-          <p>Price: $28,000</p>
-          <button class="view-details-btn">View Details</button>
-        </div>
+          <article class="car-card" id="subaru-outback" data-car="Subaru Outback">
+            <img src="images/subaru1.jpg" alt="Subaru Outback" />
+            <div class="car-card-body">
+              <h3>Subaru Outback</h3>
+              <div class="car-meta"><span class="pill">2022</span><span class="price">$28,000</span></div>
+              <button class="view-details-btn" type="button">View Details</button>
+            </div>
+          </article>
+          <article class="car-card" id="subaru-wrx" data-car="Subaru WRX">
+            <img src="images/subaru2.jpg" alt="Subaru WRX" />
+            <div class="car-card-body">
+              <h3>Subaru WRX</h3>
+              <div class="car-meta"><span class="pill">2023</span><span class="price">$34,500</span></div>
+              <button class="view-details-btn" type="button">View Details</button>
+            </div>
+          </article>
+          <article class="car-card" id="subaru-forester" data-car="Subaru Forester">
+            <img src="images/subaru3.jpg" alt="Subaru Forester" />
+            <div class="car-card-body">
+              <h3>Subaru Forester</h3>
+              <div class="car-meta"><span class="pill">2021</span><span class="price">$26,000</span></div>
+              <button class="view-details-btn" type="button">View Details</button>
+            </div>
+          </article>
+          <article class="car-card" id="subaru-brz" data-car="Subaru BRZ">
+            <img src="images/subaru4.jpg" alt="Subaru BRZ" />
+            <div class="car-card-body">
+              <h3>Subaru BRZ</h3>
+              <div class="car-meta"><span class="pill">2024</span><span class="price">$31,000</span></div>
+              <button class="view-details-btn" type="button">View Details</button>
+            </div>
+          </article>
 
-        <div class="car-item" data-car="Toyota Corolla">
-          <img src="images/toyota1.jpg" alt="Toyota Corolla">
-          <h3>Toyota Corolla</h3>
-          <p>Year: 2022</p>
-          <p>Price: $20,000</p>
-          <button class="view-details-btn">View Details</button>
-        </div>
-        <div class="car-item" data-car="Toyota Camry">
-          <img src="images/toyota2.jpg" alt="Toyota Camry">
-          <h3>Toyota Camry</h3>
-          <p>Year: 2023</p>
-          <p>Price: $27,500</p>
-          <button class="view-details-btn">View Details</button>
-        </div>
-        <div class="car-item" data-car="Toyota RAV4">
-          <img src="images/toyota3.jpg" alt="Toyota RAV4">
-          <h3>Toyota RAV4</h3>
-          <p>Year: 2021</p>
-          <p>Price: $26,500</p>
-          <button class="view-details-btn">View Details</button>
-        </div>
-        <div class="car-item" data-car="Toyota Prado">
-          <img src="images/toyota4.jpg" alt="Toyota Prado">
-          <h3>Toyota Prado</h3>
-          <p>Year: 2024</p>
-          <p>Price: $55,000</p>
-          <button class="view-details-btn">View Details</button>
+          <article class="car-card" id="mazda-3" data-car="Mazda 3">
+            <img src="images/mazda1.jpg" alt="Mazda 3" />
+            <div class="car-card-body">
+              <h3>Mazda 3</h3>
+              <div class="car-meta"><span class="pill">2022</span><span class="price">$23,000</span></div>
+              <button class="view-details-btn" type="button">View Details</button>
+            </div>
+          </article>
+          <article class="car-card" id="mazda-cx-5" data-car="Mazda CX-5">
+            <img src="images/mazda2.jpg" alt="Mazda CX-5" />
+            <div class="car-card-body">
+              <h3>Mazda CX-5</h3>
+              <div class="car-meta"><span class="pill">2023</span><span class="price">$29,000</span></div>
+              <button class="view-details-btn" type="button">View Details</button>
+            </div>
+          </article>
+          <article class="car-card" id="mazda-6" data-car="Mazda 6">
+            <img src="images/mazda3.jpg" alt="Mazda 6" />
+            <div class="car-card-body">
+              <h3>Mazda 6</h3>
+              <div class="car-meta"><span class="pill">2021</span><span class="price">$25,500</span></div>
+              <button class="view-details-btn" type="button">View Details</button>
+            </div>
+          </article>
+          <article class="car-card" id="mazda-mx-5" data-car="Mazda MX-5">
+            <img src="images/mazda4.jpg" alt="Mazda MX-5" />
+            <div class="car-card-body">
+              <h3>Mazda MX-5</h3>
+              <div class="car-meta"><span class="pill">2024</span><span class="price">$28,000</span></div>
+              <button class="view-details-btn" type="button">View Details</button>
+            </div>
+          </article>
+
+          <article class="car-card" id="toyota-corolla" data-car="Toyota Corolla">
+            <img src="images/toyota1.jpg" alt="Toyota Corolla" />
+            <div class="car-card-body">
+              <h3>Toyota Corolla</h3>
+              <div class="car-meta"><span class="pill">2022</span><span class="price">$20,000</span></div>
+              <button class="view-details-btn" type="button">View Details</button>
+            </div>
+          </article>
+          <article class="car-card" id="toyota-camry" data-car="Toyota Camry">
+            <img src="images/toyota2.jpg" alt="Toyota Camry" />
+            <div class="car-card-body">
+              <h3>Toyota Camry</h3>
+              <div class="car-meta"><span class="pill">2023</span><span class="price">$27,500</span></div>
+              <button class="view-details-btn" type="button">View Details</button>
+            </div>
+          </article>
+          <article class="car-card" id="toyota-rav4" data-car="Toyota RAV4">
+            <img src="images/toyota3.jpg" alt="Toyota RAV4" />
+            <div class="car-card-body">
+              <h3>Toyota RAV4</h3>
+              <div class="car-meta"><span class="pill">2021</span><span class="price">$26,500</span></div>
+              <button class="view-details-btn" type="button">View Details</button>
+            </div>
+          </article>
+          <article class="car-card" id="toyota-prado" data-car="Toyota Prado">
+            <img src="images/toyota4.jpg" alt="Toyota Prado" />
+            <div class="car-card-body">
+              <h3>Toyota Prado</h3>
+              <div class="car-meta"><span class="pill">2024</span><span class="price">$55,000</span></div>
+              <button class="view-details-btn" type="button">View Details</button>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section>
-      <h2>Place an Order</h2>
-      <form id="orderForm" action="https://formspree.io/f/mldbylyd" method="POST">
-        <label for="name">Full Name:</label>
-        <input type="text" name="name" id="name" required>
+    <section class="section" id="order">
+      <div class="container contact-grid">
+        <div>
+          <p class="eyebrow">Place an order</p>
+          <h2>Ready to move forward?</h2>
+          <p class="lead">Submit your preferred vehicle and any details that matter to you. The dealership team will
+            follow up with next steps.</p>
+        </div>
 
-        <label for="email">Email Address:</label>
-        <input type="email" name="email" id="email" required>
-
-        <label for="car">Preferred Car Type:</label>
-        <select name="car" id="car" required>
-          <option value="">-- Select a Car --</option>
-          <option value="BMW 3 Series">BMW 3 Series - $42,000</option>
-          <option value="BMW X5">BMW X5 - $58,000</option>
-          <option value="BMW i8">BMW i8 - $95,000</option>
-          <option value="BMW M4">BMW M4 - $70,000</option>
-          <option value="Subaru Outback">Subaru Outback - $28,000</option>
-          <option value="Subaru WRX">Subaru WRX - $34,500</option>
-          <option value="Subaru Forester">Subaru Forester - $26,000</option>
-          <option value="Subaru BRZ">Subaru BRZ - $31,000</option>
-          <option value="Mazda 3">Mazda 3 - $23,000</option>
-          <option value="Mazda CX-5">Mazda CX-5 - $29,000</option>
-          <option value="Mazda 6">Mazda 6 - $25,500</option>
-          <option value="Mazda MX-5">Mazda MX-5 - $28,000</option>
-          <option value="Toyota Corolla">Toyota Corolla - $20,000</option>
-          <option value="Toyota Camry">Toyota Camry - $27,500</option>
-          <option value="Toyota RAV4">Toyota RAV4 - $26,500</option>
-          <option value="Toyota Prado">Toyota Prado - $55,000</option>
-        </select>
-
-        <label for="message">Message / Preferences:</label>
-        <textarea name="message" id="message" rows="5"></textarea>
-
-        <button type="submit">Submit Order</button>
-      </form>
+        <form class="form-panel" id="orderForm" action="https://formspree.io/f/mldbylyd" method="POST">
+          <div class="form-grid two">
+            <div class="field">
+              <label for="name">Full Name</label>
+              <input type="text" name="name" id="name" autocomplete="name" required />
+            </div>
+            <div class="field">
+              <label for="email">Email Address</label>
+              <input type="email" name="email" id="email" autocomplete="email" required />
+            </div>
+          </div>
+          <div class="form-grid">
+            <div class="field">
+              <label for="car">Preferred Car Type</label>
+              <select name="car" id="car" required>
+                <option value="">Select a car</option>
+                <option value="BMW 3 Series">BMW 3 Series - $42,000</option>
+                <option value="BMW X5">BMW X5 - $58,000</option>
+                <option value="BMW i8">BMW i8 - $95,000</option>
+                <option value="BMW M4">BMW M4 - $70,000</option>
+                <option value="Subaru Outback">Subaru Outback - $28,000</option>
+                <option value="Subaru WRX">Subaru WRX - $34,500</option>
+                <option value="Subaru Forester">Subaru Forester - $26,000</option>
+                <option value="Subaru BRZ">Subaru BRZ - $31,000</option>
+                <option value="Mazda 3">Mazda 3 - $23,000</option>
+                <option value="Mazda CX-5">Mazda CX-5 - $29,000</option>
+                <option value="Mazda 6">Mazda 6 - $25,500</option>
+                <option value="Mazda MX-5">Mazda MX-5 - $28,000</option>
+                <option value="Toyota Corolla">Toyota Corolla - $20,000</option>
+                <option value="Toyota Camry">Toyota Camry - $27,500</option>
+                <option value="Toyota RAV4">Toyota RAV4 - $26,500</option>
+                <option value="Toyota Prado">Toyota Prado - $55,000</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="message">Message / Preferences</label>
+              <textarea name="message" id="message" rows="5"></textarea>
+            </div>
+            <button class="button" type="submit">Submit Order</button>
+          </div>
+        </form>
+      </div>
     </section>
   </main>
 
-  <!-- Modal -->
-  <div id="carModal" class="modal" style="display:none; position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.5);">
-    <div style="background: white; border-radius: 10px; max-width: 500px; margin: 60px auto; padding: 20px; position: relative;">
-      <button id="closeModal" style="position:absolute; top:10px; right:15px; background:none; border:none; font-size: 1.5rem; cursor:pointer;">&times;</button>
-      <h2 id="modalTitle"></h2>
-      <ul id="modalFeatures" style="text-align:left; padding-left: 20px;"></ul>
+  <div class="modal" id="carModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h2 id="modalTitle"></h2>
+        <button class="icon-button" id="closeModal" type="button" aria-label="Close details modal">&times;</button>
+      </div>
+      <ul class="feature-list" id="modalFeatures"></ul>
     </div>
   </div>
 
-  <footer>
-    <p>&copy; 2025 Lenana Car Dealership | Designed by Harry Lenana</p>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>&copy; 2025 Lenana Car Dealership. Designed by Harry Lenana.</p>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
   </footer>
-
-  <script>
-    // Features data for each car
-    const carFeatures = {
-      "BMW 3 Series": [
-        "Engine: 2.0L Turbocharged 4-cylinder",
-        "Horsepower: 255 hp",
-        "Fuel Economy: 26 MPG city / 36 MPG highway",
-        "Transmission: 8-speed automatic",
-        "Seats: 5",
-        "Safety: Advanced driver assistance features"
-      ],
-      "BMW X5": [
-        "Engine: 3.0L Turbocharged inline-6",
-        "Horsepower: 335 hp",
-        "Fuel Economy: 21 MPG city / 26 MPG highway",
-        "Transmission: 8-speed automatic",
-        "Seats: 5",
-        "All-Wheel Drive"
-      ],
-      "BMW i8": [
-        "Engine: Plug-in hybrid 1.5L 3-cylinder + electric motor",
-        "Horsepower: 369 hp combined",
-        "Fuel Economy: 69 MPGe combined",
-        "Transmission: 6-speed automatic",
-        "Seats: 2",
-        "Carbon-fiber reinforced plastic body"
-      ],
-      "BMW M4": [
-        "Engine: 3.0L Twin-Turbo inline-6",
-        "Horsepower: 473 hp",
-        "Fuel Economy: 16 MPG city / 23 MPG highway",
-        "Transmission: 6-speed manual or 8-speed automatic",
-        "Seats: 4",
-        "Sport-tuned suspension"
-      ],
-      "Subaru Outback": [
-        "Engine: 2.5L 4-cylinder Boxer",
-        "Horsepower: 182 hp",
-        "Fuel Economy: 26 MPG city / 33 MPG highway",
-        "Transmission: CVT automatic",
-        "Seats: 5",
-        "Standard all-wheel drive"
-      ],
-      "Subaru WRX": [
-        "Engine: 2.0L Turbocharged Boxer 4-cylinder",
-        "Horsepower: 268 hp",
-        "Fuel Economy: 21 MPG city / 27 MPG highway",
-        "Transmission: 6-speed manual or CVT",
-        "Seats: 5",
-        "Performance-tuned suspension"
-      ],
-      "Subaru Forester": [
-        "Engine: 2.5L 4-cylinder Boxer",
-        "Horsepower: 182 hp",
-        "Fuel Economy: 26 MPG city / 33 MPG highway",
-        "Transmission: CVT automatic",
-        "Seats: 5",
-        "Spacious interior and cargo space"
-      ],
-      "Subaru BRZ": [
-        "Engine: 2.0L Boxer 4-cylinder",
-        "Horsepower: 228 hp",
-        "Fuel Economy: 21 MPG city / 30 MPG highway",
-        "Transmission: 6-speed manual or automatic",
-        "Seats: 4",
-        "Rear-wheel drive sports car"
-      ],
-      "Mazda 3": [
-        "Engine: 2.5L 4-cylinder",
-        "Horsepower: 186 hp",
-        "Fuel Economy: 28 MPG city / 36 MPG highway",
-        "Transmission: 6-speed automatic",
-        "Seats: 5",
-        "Advanced safety features"
-      ],
-      "Mazda CX-5": [
-        "Engine: 2.5L 4-cylinder",
-        "Horsepower: 187 hp",
-        "Fuel Economy: 24 MPG city / 30 MPG highway",
-        "Transmission: 6-speed automatic",
-        "Seats: 5",
-        "Premium interior with touchscreen"
-      ],
-      "Mazda 6": [
-        "Engine: 2.5L 4-cylinder Turbo",
-        "Horsepower: 250 hp",
-        "Fuel Economy: 26 MPG city / 35 MPG highway",
-        "Transmission: 6-speed automatic",
-        "Seats: 5",
-        "Sporty handling and luxury interior"
-      ],
-      "Mazda MX-5": [
-        "Engine: 2.0L 4-cylinder",
-        "Horsepower: 181 hp",
-        "Fuel Economy: 26 MPG city / 35 MPG highway",
-        "Transmission: 6-speed manual or automatic",
-        "Seats: 2",
-        "Lightweight roadster with agile handling"
-      ],
-      "Toyota Corolla": [
-        "Engine: 1.8L 4-cylinder",
-        "Horsepower: 139 hp",
-        "Fuel Economy: 30 MPG city / 38 MPG highway",
-        "Transmission: CVT automatic",
-        "Seats: 5",
-        "Reliable and fuel-efficient"
-      ],
-      "Toyota Camry": [
-        "Engine: 2.5L 4-cylinder",
-        "Horsepower: 203 hp",
-        "Fuel Economy: 28 MPG city / 39 MPG highway",
-        "Transmission: 8-speed automatic",
-        "Seats: 5",
-        "Spacious and comfortable interior"
-      ],
-      "Toyota RAV4": [
-        "Engine: 2.5L 4-cylinder",
-        "Horsepower: 203 hp",
-        "Fuel Economy: 27 MPG city / 35 MPG highway",
-        "Transmission: 8-speed automatic",
-        "Seats: 5",
-        "Standard safety suite and AWD option"
-      ],
-      "Toyota Prado": [
-        "Engine: 2.8L Turbo Diesel",
-        "Horsepower: 201 hp",
-        "Fuel Economy: 22 MPG combined",
-        "Transmission: 6-speed automatic",
-        "Seats: 7",
-        "Off-road capability and luxury interior"
-      ]
-    };
-
-    // Modal elements
-    const modal = document.getElementById('carModal');
-    const modalTitle = document.getElementById('modalTitle');
-    const modalFeatures = document.getElementById('modalFeatures');
-    const closeModalBtn = document.getElementById('closeModal');
-
-    // Show modal with car details
-    function showModal(carName) {
-      modalTitle.textContent = carName;
-      modalFeatures.innerHTML = '';
-      if (carFeatures[carName]) {
-        carFeatures[carName].forEach(feature => {
-          const li = document.createElement('li');
-          li.textContent = feature;
-          modalFeatures.appendChild(li);
-        });
-      } else {
-        modalFeatures.innerHTML = '<li>No details available.</li>';
-      }
-      modal.style.display = 'block';
-    }
-
-    // Close modal function
-    function closeModal() {
-      modal.style.display = 'none';
-    }
-
-    // Attach event listeners to all "View Details" buttons
-    document.querySelectorAll('.view-details-btn').forEach(button => {
-      button.addEventListener('click', function() {
-        const carItem = this.closest('.car-item');
-        const carName = carItem.getAttribute('data-car');
-        showModal(carName);
-      });
-    });
-
-    // Close modal when clicking the close button
-    closeModalBtn.addEventListener('click', closeModal);
-
-    // Close modal when clicking outside the modal content
-    window.addEventListener('click', function(event) {
-      if (event.target === modal) {
-        closeModal();
-      }
-    });
-
-    // Existing order form submission code
-    const orderForm = document.getElementById('orderForm');
-    if (orderForm) {
-      orderForm.addEventListener('submit', async function(event) {
-        event.preventDefault();
-        const data = new FormData(orderForm);
-        try {
-          const response = await fetch(orderForm.action, {
-            method: 'POST',
-            body: data,
-            headers: { 'Accept': 'application/json' }
-          });
-          if (response.ok) {
-            alert("Order placed successfully!");
-            orderForm.reset();
-          } else {
-            alert("Something went wrong. Please try again.");
-          }
-        } catch (error) {
-          alert("Error submitting your order.");
-        }
-      });
-    }
-  </script>
 </body>
 
+</html>

@@ -1,144 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact - Lenana Car Deals</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: linear-gradient(to right, #83a4d4, #b6fbff);
-      color: #333;
-    }
-    header {
-      background-color: #264653;
-      color: white;
-      padding: 20px 0;
-      text-align: center;
-    }
-    nav ul {
-      list-style-type: none;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      padding: 0;
-      margin: 10px 0 0;
-    }
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    nav ul li a:hover {
-      text-decoration: underline;
-    }
-    main {
-      padding: 30px 20px;
-      text-align: center;
-    }
-    form {
-      background-color: white;
-      padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      max-width: 600px;
-      margin: auto;
-      text-align: left;
-    }
-    form label {
-      display: block;
-      margin-top: 15px;
-      font-weight: bold;
-    }
-    input, textarea {
-      width: 100%;
-      padding: 12px;
-      margin-top: 6px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      box-sizing: border-box;
-    }
-    button {
-      margin-top: 20px;
-      background-color: #264653;
-      color: white;
-      border: none;
-      padding: 12px 20px;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #1b2e3b;
-    }
-    footer {
-      background-color: #264653;
-      color: white;
-      text-align: center;
-      padding: 12px 0;
-      margin-top: 30px;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact Lenana Car Dealership to ask about vehicles, pricing, or support." />
+  <title>Contact | Lenana Car Dealership</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="app.js" defer></script>
 </head>
+
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav-shell" aria-label="Primary navigation">
+      <a class="brand" href="index.html" aria-label="Lenana Car Dealership home">
+        <span class="brand-mark" aria-hidden="true">LC</span>
+        <span>Lenana Cars<small>Premium dealership</small></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="inventory.html">Inventory</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a class="nav-cta" href="contact.html" aria-current="page">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<header>
-  <h1>Contact Us</h1>
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="inventory.html">Inventory</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-</header>
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow">Contact</p>
+        <h1>Tell us what you are looking for.</h1>
+        <p class="lead">Send a message and the Lenana Cars team will help with availability, pricing, or the next step
+          in your buying journey.</p>
+      </div>
+    </section>
 
-<main>
-  <form id="contactForm" action="https://formspree.io/f/mldbylyd" method="POST">
-    <label for="email">Your Email:</label>
-    <input type="email" name="email" id="email" required>
+    <section class="section">
+      <div class="container contact-grid">
+        <div class="contact-panel">
+          <article class="info-card">
+            <h3>Sales Support</h3>
+            <p>Ask about vehicle availability, pricing, and recommended options for your needs.</p>
+          </article>
+          <article class="info-card">
+            <h3>Order Assistance</h3>
+            <p>Already found a vehicle? Use the inventory order form or send a quick message here.</p>
+          </article>
+        </div>
 
-    <label for="message">Your Message:</label>
-    <textarea name="message" id="message" rows="6" required></textarea>
+        <form class="form-panel" id="contactForm" action="https://formspree.io/f/mldbylyd" method="POST">
+          <div class="form-grid">
+            <div class="field">
+              <label for="email">Your Email</label>
+              <input type="email" name="email" id="email" autocomplete="email" required />
+            </div>
+            <div class="field">
+              <label for="message">Your Message</label>
+              <textarea name="message" id="message" rows="6" required></textarea>
+            </div>
+            <button class="button" type="submit">Send Message</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
 
-    <button type="submit">Send Message</button>
-  </form>
-</main>
-
-<footer>
-  <p>&copy; 2025 Lenana Car Dealership</p>
-</footer>
-
-<script>
-  // Handle form submission to clear fields
-  const form = document.getElementById('contactForm');
-
-  form.addEventListener('submit', async function(event) {
-    event.preventDefault(); // Prevent default form submission
-
-    const formData = new FormData(form);
-
-    try {
-      const response = await fetch(form.action, {
-        method: 'POST',
-        body: formData,
-        headers: {
-          'Accept': 'application/json'
-        }
-      });
-
-      if (response.ok) {
-        alert("Message sent successfully!");
-        form.reset(); // Clear form fields
-      } else {
-        alert("Something went wrong. Please try again.");
-      }
-    } catch (error) {
-      alert("Error submitting the form.");
-    }
-  });
-</script>
-
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>&copy; 2025 Lenana Car Dealership. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="inventory.html">Inventory</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
 </body>
+
 </html>
