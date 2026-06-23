@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact - Lenana Car Deals</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: linear-gradient(to right, #83a4d4, #b6fbff);
+      color: #333;
+    }
+    header {
+      background-color: #264653;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+    nav ul {
+      list-style-type: none;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 0;
+      margin: 10px 0 0;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+    main {
+      padding: 30px 20px;
+      text-align: center;
+    }
+    form {
+      background-color: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      max-width: 600px;
+      margin: auto;
+      text-align: left;
+    }
+    form label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 6px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-sizing: border-box;
+    }
+    button {
+      margin-top: 20px;
+      background-color: #264653;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #1b2e3b;
+    }
+    footer {
+      background-color: #264653;
+      color: white;
+      text-align: center;
+      padding: 12px 0;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Contact Us</h1>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="inventory.html">Inventory</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <form id="contactForm" action="https://formspree.io/f/mldbylyd" method="POST">
+    <label for="email">Your Email:</label>
+    <input type="email" name="email" id="email" required>
+
+    <label for="message">Your Message:</label>
+    <textarea name="message" id="message" rows="6" required></textarea>
+
+    <button type="submit">Send Message</button>
+  </form>
+</main>
+
+<footer>
+  <p>&copy; 2025 Lenana Car Dealership</p>
+</footer>
+
+<script>
+  // Handle form submission to clear fields
+  const form = document.getElementById('contactForm');
+
+  form.addEventListener('submit', async function(event) {
+    event.preventDefault(); // Prevent default form submission
+
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        alert("Message sent successfully!");
+        form.reset(); // Clear form fields
+      } else {
+        alert("Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      alert("Error submitting the form.");
+    }
+  });
+</script>
+
+</body>
+</html>
